@@ -11,23 +11,6 @@ app.l = (function(w,d,$,el,f) {
   var a = app.a; // create address searching object
   var self = this;
 
-    // swipe interaction for mobile
-  // $(document).touchwipe({
-  //   wipeUp              : function()
-  //   {
-  //       self.goToNextSlide();
-  //   },
-
-  //   wipeDown            : function()
-  //   {
-  //       self.goToPrevSlide();
-  //   },
-
-  //   min_move_x          : 50,
-  //   min_move_y          : 15,
-  //   preventDefaultEvents: true    
-  // });
-
   function listen() {
     app.events.subscribe('state-updated', function(updatedState){
       state = updatedState;
@@ -115,11 +98,9 @@ app.l = (function(w,d,$,el,f) {
       w.location.hash = '';
     });  
 
-    // el.trModal.addEventListener('click', function(e) {
-    //   e.preventDefault();
-    //   f.goToSlide(el.slides[7]);
-    //   w.location.hash = '';
-    // });
+    app.swipe(app.el.slides,function(el,dir){
+
+    });
   }
 
   return {
